@@ -33,8 +33,7 @@ class App extends React.Component {
     await fetch(`http://${HOSTNAME}:${PORT_EXPRESS}/set?val=${_value}`, { method: "POST" })
       .then(result => result.json())
       .then(data => {
-        console.log("tx:", data.tx);
-        console.log("storedData:", data.val);
+        console.log("storedData:", data.val, `tx: ${data.tx}`);
         this.setState({
           loading: false,
           storedData: data.val
